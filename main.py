@@ -1,5 +1,32 @@
+# import Python standard modules
+import sys
+import getopt
+
+# import custom modules
 from adb import disable_multiple_packages
 import fsoperations
+
+# get input and outfile file names from the user
+def getArguments(argv):
+	input_file = ""
+	output_file = ""
+
+	try:
+		opts, args = getopt.getopt(argv, "hi:o", ["input=", "output="])
+	except getopt.GetoptError:
+		print("main.py --input <input_file> --output <output_file>")
+		sys.exit(2)
+
+	for opt, arg in opts:
+		if opt == "-h":
+			print("main.py --input <input_file> --output <output_file>")
+			sys.exit()
+		elif opt in ("-i", "--input"):
+			input_file = arg
+		elif opt in ("-o", "--output"):
+			output_file = arg
+
+	return (input_file, output_file)
 
 
 # Using the application com.csdroid.pkg get the list of packages to be disabled
@@ -27,8 +54,7 @@ def parse_disable_package_list(raw_package_name_file, clean_output_file):
 
 
 if __name__ == "__main__":
-	raw_package_name_file = "./remove_apps"
-	clean_output_file = "./clean_remove_packages"
+	raw_package_name_file, clean_output_file = getArguments(sys.argv[1:])
 
 	try:
 		parse_disable_package_list(raw_package_name_file, clean_output_file)
