@@ -1,10 +1,13 @@
 # import Python standard modules
 import sys
 import getopt
+import platform
+import argparse
 
 # import custom modules
-from adb import disable_multiple_packages
+import adb
 import fsoperations
+
 
 # get input and outfile file names from the user
 def getArguments(argv):
@@ -28,8 +31,21 @@ def getArguments(argv):
 
 	return (input_file, output_file)
 
+# def getArguments():
+# 	parser = argparse.ArgumentParser()
+# 	parser.add_argument("-i", "--input", action="store_true")
+
+
+# only run on supported platforms
+def check_platform_compatibility(supported_platforms):
+	current_platform = platform.system()
+	if current_platform not in supported_platforms:
+		print(f"Unsupported Platform: Only the following Platforms are supported: {', '.join(supported_platforms)}")
+		sys.exit(1)
+
 
 # Using the application com.csdroid.pkg get the list of packages to be disabled
+# this function takes the raw package details and creates a clean list of packages
 def parse_disable_package_list(raw_package_name_file, clean_output_file):
 	if not fsoperations.check_file_exists(raw_package_name_file):
 		raise Exception(f"File Not Found: {raw_package_name_file}")
@@ -54,10 +70,16 @@ def parse_disable_package_list(raw_package_name_file, clean_output_file):
 
 
 if __name__ == "__main__":
-	raw_package_name_file, clean_output_file = getArguments(sys.argv[1:])
+	supported_platforms = ["Linux", "Darwin"]
+	check_platform_compatibility(supported_platforms)
 
-	try:
-		parse_disable_package_list(raw_package_name_file, clean_output_file)
-		# disable_multiple_packages(clean_output_file)
-	except Exception as error:
-		print(error)
+	# get arguments from the command line
+	raw_package_name_file, clean_output_file = getArguments(sys.argv[1:])
+	print("input file: ", raw_package_name_file)
+	print("output file: ", clean_output_file)
+
+	# try:
+	# 	parse_disable_package_list(raw_package_name_file, clean_output_file)
+	# 	# adb.disable_multiple_packages(clean_output_file)
+	# except Exception as error:
+	# 	print(error)

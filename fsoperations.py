@@ -20,6 +20,7 @@ def write_line(filename, line):
 		raise Exception(f"File Not Found: {filename}")
 		return
 
+	# append to output file NOT overwrite
 	with open(filename, "at") as ofile:
 			line = line.strip()
 			ofile.write(f"{line}\n")
