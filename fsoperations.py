@@ -1,4 +1,7 @@
 import os
+import sys
+import errno
+
 
 # check is a file exists
 def check_file_exists(filepath):
@@ -8,17 +11,18 @@ def check_file_exists(filepath):
 # create a file on the path specified
 def create_file(filepath):
 	if check_file_exists(filepath):
-		raise Exception(f"File already Exists: {filepath}")
-		return
+		print(f"File already Exists: {filepath}")
+		sys.exit(errno.EEXIST)
 
-	os.mknod(filepath)
+	with open(filepath, "wt") as file:
+			pass
 
 
 # write a single line to the file provided
 def write_line(filename, line):
 	if not check_file_exists(filename):
-		raise Exception(f"File Not Found: {filename}")
-		return
+		print(f"File Not Found: {filename}")
+		sys.exit(errno.ENOENT)
 
 	# append to output file NOT overwrite
 	with open(filename, "at") as ofile:
