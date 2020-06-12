@@ -2,19 +2,19 @@ import fsoperations
 from os import remove
 
 def test_check_file_exists():
-	test_file = "./tests/example_file_exists.txt"
+	test_file = "./test_files/example_file_exists.txt"
 	assert fsoperations.check_file_exists(test_file) == True
 
 
 def test_create_file():
-	test_file = "./tests/example_create_file.txt"
+	test_file = "./test_files/example_create_file.txt"
 	fsoperations.create_file(test_file)
 	assert fsoperations.check_file_exists(test_file) == True
 	remove(test_file)
 
 
 def test_write_line():
-	test_file = "./tests/example_write_line.txt"
+	test_file = "./test_files/example_write_line.txt"
 	test_line = "this is a test line"
 
 	fsoperations.create_file(test_file)
