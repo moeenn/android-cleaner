@@ -16,7 +16,7 @@ def disable_package(package_name):
 
 # disable all packages listed in a file
 def disable_multiple_packages(package_names_file):
-	if not check_file_exists(package_names_file):
+	if not fsoperations.check_file_exists(package_names_file):
 		print(f"File Not Found: {package_names_file}")
 		sys.exit(errno.ENOENT)
 

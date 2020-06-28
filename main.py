@@ -64,6 +64,6 @@ if __name__ == "__main__":
 	print("output file: ", clean_output_file)
 
 	adb.parse_disable_package_list(raw_package_name_file, clean_output_file)
-	# adb.disable_multiple_packages(clean_output_file)
+	adb.disable_multiple_packages(clean_output_file)
 
 	sys.exit(0)
