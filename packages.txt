@@ -1,0 +1,151 @@
+app:Device Health Services
+package:com.google.android.apps.turbo
+Launcher:null
+app:Galaxy Themes
+package:com.samsung.android.themestore
+Launcher:null
+app:Samsung Editing Assets
+package:com.sec.android.app.ve.vebgm
+Launcher:null
+app:Group Sharing
+package:com.samsung.android.mobileservice
+Launcher:null
+app:Clipboard edge
+package:com.samsung.android.app.clipboardedge
+Launcher:null
+app:Facebook App Manager
+package:com.facebook.appmanager
+Launcher:null
+app:Android R Easter Egg
+package:com.android.egg
+Launcher:null
+app:Apps
+package:com.samsung.android.app.appsedge
+Launcher:null
+app:Application recommendations
+package:com.samsung.android.mapsagent
+Launcher:null
+app:com.android.providers.partnerbookmarks
+package:com.android.providers.partnerbookmarks
+Launcher:null
+app:Live Wallpaper Picker
+package:com.android.wallpaper.livepicker
+Launcher:null
+app:ChromeCustomizations
+package:com.sec.android.app.chromecustomizations
+Launcher:null
+app:EmergencyProvider
+package:com.sec.android.provider.emergencymode
+Launcher:null
+app:Speech Services by Google
+package:com.google.android.tts
+Launcher:null
+app:TalkBack
+package:com.samsung.android.accessibility.talkback
+Launcher:null
+app:Photo Screensavers
+package:com.android.dreams.phototable
+Launcher:null
+app:EpdgTestApp
+package:com.sec.epdgtestapp
+Launcher:null
+app:Hiya Service
+package:com.hiya.star
+Launcher:null
+app:Chrome
+package:com.android.chrome
+Launcher:null
+app:Work Setup
+package:com.android.managedprovisioning
+Launcher:null
+app:AASAservice
+package:com.samsung.aasaservice
+Launcher:null
+app:Facebook Services
+package:com.facebook.services
+Launcher:null
+app:Bookmark Provider
+package:com.android.bookmarkprovider
+Launcher:null
+app:Samsung Checkout
+package:com.sec.android.app.billing
+Launcher:null
+app:Weather
+package:com.sec.android.daemonapp
+Launcher:null
+app:Duo
+package:com.google.android.apps.tachyon
+Launcher:null
+app:Emergency information
+package:com.android.emergency
+Launcher:null
+app:SamsungOne
+package:com.monotype.android.font.samsungone
+Launcher:null
+app:MDMApp
+package:com.samsung.android.mdm
+Launcher:null
+app:Google
+package:com.google.android.googlequicksearchbox
+Launcher:null
+app:Android Auto
+package:com.google.android.projection.gearhead
+Launcher:null
+app:Automation Test
+package:com.sec.android.app.DataCreate
+Launcher:null
+app:Tasks
+package:com.samsung.android.app.taskedge
+Launcher:null
+app:Wireless emergency alerts
+package:com.google.android.cellbroadcastreceiver
+Launcher:null
+app:OneDrive
+package:com.microsoft.skydrive
+Launcher:null
+app:Wi-Fi Calling
+package:com.sec.unifiedwfc
+Launcher:null
+app:Device Services
+package:com.samsung.android.kgclient
+Launcher:null
+app:Basic Daydreams
+package:com.android.dreams.basic
+Launcher:null
+app:Nearby device scanning
+package:com.samsung.android.easysetup
+Launcher:null
+app:Facebook App Installer
+package:com.facebook.system
+Launcher:null
+app:Facebook
+package:com.facebook.katana
+Launcher:null
+app:Galaxy Store
+package:com.sec.android.app.samsungapps
+Launcher:com.sec.android.app.samsungapps.SamsungAppsMainActivity
+app:Video trimmer
+package:com.samsung.app.newtrim
+Launcher:null
+app:Samsung account
+package:com.osp.app.signin
+Launcher:null
+app:User manual
+package:com.sec.android.widgetapp.webmanual
+Launcher:null
+app:Edge panels
+package:com.samsung.android.app.cocktailbarservice
+Launcher:null
+app:Radio
+package:com.sec.android.app.fm
+Launcher:com.sec.android.app.fm.MainActivity
+app:Wearable Manager Installer
+package:com.samsung.android.app.watchmanagerstub
+Launcher:null
+app:Market Feedback Agent
+package:com.google.android.feedback
+Launcher:null
+app:Game Optimizing Service
+package:com.samsung.android.game.gos
+Launcher:null
+

@@ -1,0 +1,15 @@
+app:Device Health Services
+package:com.google.android.apps.turbo
+Launcher:null
+app:Galaxy Themes
+package:com.samsung.android.themestore
+Launcher:null
+app:Samsung Editing Assets
+package:com.sec.android.app.ve.vebgm
+Launcher:null
+app:Group Sharing
+package:com.samsung.android.mobileservice
+Launcher:null
+app:Clipboard edge
+package:com.samsung.android.app.clipboardedge
+Launcher:null
