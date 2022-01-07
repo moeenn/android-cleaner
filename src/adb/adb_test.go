@@ -18,6 +18,20 @@ func TestInInstalled(t *testing.T) {
 			},
 			output: false,
 		},
+		{
+			input: []string{"which", "adb"},
+			executor: func(args ...string) (string, error) {
+				return "/bin/adb", nil
+			},
+			output: true,
+		},
+		{
+			input: []string{"which", "adb"},
+			executor: func(args ...string) (string, error) {
+				return "", nil
+			},
+			output: false,
+		},
 	}
 
 	for _, testCase := range testCases {
