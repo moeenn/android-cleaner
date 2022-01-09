@@ -42,3 +42,42 @@ func TestInInstalled(t *testing.T) {
 		}
 	}
 }
+
+func TestDisablePackage(t *testing.T) {
+	testCases := []struct {
+		input         string
+		executor      executor
+		outputIsError bool
+	}{
+		{
+			input: "com.google.android.apps.turbo",
+			executor: func(args ...string) (string, error) {
+				return "", errors.New("Package not found")
+			},
+			outputIsError: true,
+		},
+		{
+			input: "com.google.android.apps.turbo",
+			executor: func(args ...string) (string, error) {
+				return "package disabled", nil
+			},
+			outputIsError: false,
+		},
+	}
+
+	for _, testCase := range testCases {
+		got := DisablePackage(testCase.input, testCase.executor)
+
+		if testCase.outputIsError {
+			if got == nil {
+				t.Errorf("Failed: Expected error to be thrown but no error was thrown")
+			}
+		}
+
+		if !testCase.outputIsError {
+			if got != nil {
+				t.Errorf("Failed: Didn't expect an error but an error was thrown")
+			}
+		}
+	}
+}

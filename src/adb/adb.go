@@ -6,6 +6,10 @@ import (
 
 type executor func(...string) (string, error)
 
+/**
+ *  checks if adb is installed on the system or not
+ *
+ */
 func IsInstalled(exec executor) bool {
 	output, err := exec("which", "adb")
 	if err != nil {
@@ -17,4 +21,13 @@ func IsInstalled(exec executor) bool {
 	}
 
 	return true
+}
+
+/**
+ *  disable a given package on the connected android device
+ *
+ */
+func DisablePackage(pkg string, exec executor) error {
+	_, err := exec("adb", "shell", "pm", "disable", pkg)
+	return err
 }
