@@ -1,8 +1,8 @@
 package main
 
 import (
-	// 	"android-cleaner/src/adb"
-	// 	"android-cleaner/src/command"
+	"android-cleaner/src/adb"
+	"android-cleaner/src/command"
 	"android-cleaner/src/input"
 	"flag"
 	"fmt"
@@ -27,6 +27,13 @@ func main() {
 	}
 
 	for _, pkg := range packages {
-		fmt.Println(pkg)
+		fmt.Printf("Disabling Package: %s ", pkg)
+		err := adb.DisablePackage(pkg, command.Executor)
+
+		if err != nil {
+			fmt.Printf("\t[Failed]\n\nError: %v\n", err)
+		} else {
+			fmt.Printf("[Done]\n")
+		}
 	}
 }
