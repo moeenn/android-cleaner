@@ -28,6 +28,6 @@ func IsInstalled(exec executor) bool {
  *
  */
 func DisablePackage(pkg string, exec executor) error {
-	_, err := exec("adb", "shell", "pm", "disable", pkg)
+	_, err := exec("adb", "shell", "pm", "disable-user", pkg)
 	return err
 }
