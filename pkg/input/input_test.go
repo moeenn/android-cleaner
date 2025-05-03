@@ -1,7 +1,7 @@
 package input
 
 import (
-	"os"
+	"strings"
 	"testing"
 )
 
@@ -11,19 +11,19 @@ func TestExtractPackageName(t *testing.T) {
 		output string
 	}{
 		{
-			input:  "package:com.samsung.android.app.clipboardedge\n",
+			input:  "com.samsung.android.app.clipboardedge\n",
 			output: "com.samsung.android.app.clipboardedge",
 		},
 		{
-			input:  "package:com.android.managedprovisioning",
+			input:  "com.android.managedprovisioning",
 			output: "com.android.managedprovisioning",
 		},
 		{
-			input:  "app:EmergencyProvider",
+			input:  "EmergencyProvider",
 			output: "",
 		},
 		{
-			input:  "Launcher:null",
+			input:  "null",
 			output: "",
 		},
 	}
@@ -37,13 +37,23 @@ func TestExtractPackageName(t *testing.T) {
 }
 
 func TestCleanse(t *testing.T) {
-	testFilePath := "./test/sample.packages.txt"
-	file, err := os.Open(testFilePath)
-	defer file.Close()
-
-	if err != nil {
-		t.Errorf("Failed to open file: '%s'", testFilePath)
-	}
+	testInput := `
+app:Device Health Services
+package:com.google.android.apps.turbo
+Launcher:null
+app:Galaxy Themes
+package:com.samsung.android.themestore
+Launcher:null
+app:Samsung Editing Assets
+package:com.sec.android.app.ve.vebgm
+Launcher:null
+app:Group Sharing
+package:com.samsung.android.mobileservice
+Launcher:null
+app:Clipboard edge
+package:com.samsung.android.app.clipboardedge
+Launcher:null		
+	`
 
 	expected := []string{
 		"com.google.android.apps.turbo",
@@ -53,7 +63,8 @@ func TestCleanse(t *testing.T) {
 		"com.samsung.android.app.clipboardedge",
 	}
 
-	got, err := Cleanse(file)
+	lines := strings.Split(testInput, "\n")
+	got, err := Cleanse(lines)
 	if err != nil {
 		t.Errorf("Failed to process input file: %v", err)
 	}
